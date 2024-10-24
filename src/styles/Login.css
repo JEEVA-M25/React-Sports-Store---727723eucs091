@@ -1,0 +1,46 @@
+.login-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Rounder edges for the container */
+     background: linear-gradient(135deg, #8cceb6 0%, #56a3e0 100%);}
+  
+  .input-group {
+      margin-bottom: 15px;
+    }
+    
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .input-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 30px; /* More rounded edges */
+     
+    box-sizing: border-box; /* Ensures padding doesn't affect border-radius */
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px; /* More rounded edges */
+    cursor: pointer;
+    box-sizing: border-box; /* Ensures padding doesn't affect border-radius */
+  }
+  
+  .login-btn:hover {
+    background-color: #293038;
+  }
+  

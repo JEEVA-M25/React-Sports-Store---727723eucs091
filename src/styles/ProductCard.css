@@ -1,0 +1,53 @@
+.product__item {
+    background: #eaeceb; /* Light gray background to differentiate from white */
+    border-radius: 8px; /* Smooth rounded corners */
+    padding: 15px; /* Add padding for some spacing inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow on hover */
+}
+
+.product__item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+}
+
+.product__img img {
+    border-radius: 8px; /* Add slight rounding to the image */
+}
+
+.product__info h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.product__info a:hover {
+    color: inherit;
+}
+
+.product__info span {
+    font-size: 0.9rem;
+}
+
+.product__card-bot .price {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.product__card-bot span i {
+    font-size: 1.2rem;
+    padding: 5px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50px;
+}
+
+.product__name a {
+    text-decoration: none; /* Removes underline */
+    color: #000; /* Black color */
+}
+
+.product__name a:hover {
+    color: #479f60; /* Hover color */
+}

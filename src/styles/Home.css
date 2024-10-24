@@ -1,0 +1,66 @@
+
+.hero__section{
+    background: var(--hero-bg);
+}
+.hero__section h2{
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0px;
+}
+.hero__section p{
+    color: #111;
+    line-height: 28px;
+}
+.hero__section p:nth-child(1)
+{
+    font-weight: 500;
+}
+.hero__img{
+    height: fit-content;
+    width : fit-content;
+}
+.buy__btn{
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: rem;
+    text-decoration: none;
+    text-align: center;
+}
+.hero__content{
+    padding-top: 45px;
+}
+.buy__btn a:hover{
+    color: rgb(255, 255, 255);
+}
+.texty{
+    text-decoration: none;
+    color: #fff;
+}
+.timer__count{
+    background: var(--primary-color);
+    height: 300px;
+}
+.timer__count img{
+    width: 70% !important;
+    height: 70% !important;
+    object-fit: contain;
+}
+.store__btn{
+    background:white;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 30px;
+}
+.store__btn a:hover{
+    color: var(--primary-color);
+}
+.store__btn a {
+    text-decoration: none; /* Removes underline */
+    color: #000000; /* Changes the color to white or any preferred color */
+  }
