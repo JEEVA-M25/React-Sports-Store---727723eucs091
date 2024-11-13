@@ -1,0 +1,93 @@
+/* src/styles/Cart.css */
+
+.cart {
+    padding: 20px;
+    padding-top: 50px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif; /* Use Arial for the entire cart */
+  }
+  
+  .cart h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; /* Use Georgia for the heading */
+  }
+  
+  .cart-items-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #eaeceb;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Set width to a percentage for responsiveness */
+    max-width: 600px; /* Optional: set a maximum width for larger screens */
+  }
+  
+  .cart-item-image {
+    width: 100px; /* Increase the width as desired */
+    height: 100px; /* Increase the height as desired */
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .cart-item-info {
+    flex: 1;
+  }
+  
+  .cart-item-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace; /* Use Courier New for item price */
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .quantity-controls button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .quantity-controls span {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  
+  .remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cart-summary {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center; /* Center the text */
+    font-family: 'Arial', sans-serif; /* Use Arial for the summary */
+  }
+  

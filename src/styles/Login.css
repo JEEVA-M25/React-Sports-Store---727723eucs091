@@ -1,46 +1,123 @@
-.login-container {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Rounder edges for the container */
-     background: linear-gradient(135deg, #8cceb6 0%, #56a3e0 100%);}
-  
-  .input-group {
-      margin-bottom: 15px;
-    }
-    
-    .input-group label {
-        display: block;
-        margin-bottom: 5px;
-    }
-    
-    .input-group input {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 30px; /* More rounded edges */
-     
-    box-sizing: border-box; /* Ensures padding doesn't affect border-radius */
-  }
-  
-  .error-message {
-    color: red;
-    margin-bottom: 10px;
-  }
-  
-  .login-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 30px; /* More rounded edges */
-    cursor: pointer;
-    box-sizing: border-box; /* Ensures padding doesn't affect border-radius */
-  }
-  
-  .login-btn:hover {
-    background-color: #293038;
-  }
-  
+/* Container Styling */
+.login-container,
+.signup-container {
+  position: relative; /* Set positioning context for pseudo-elements */
+  background: linear-gradient(pink, rgb(186, 191, 201));
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increased shadow for a more pronounced floating effect */
+  width: 400px;
+  max-width: 90%;
+  padding: 30px 25px;
+  margin: 20px auto;
+  overflow: hidden; /* Prevents overflow from pseudo-element */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background to enhance the floating effect */
+}
+
+/* Header Styling */
+.login-head,
+.signup-head {
+  font-size: 1.8em;
+  color: #333333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Input Fields Styling */
+.login-input,
+.signup-input {
+  margin-bottom: 20px;
+}
+
+.login-ip,
+.signup-ip {
+  margin-bottom: 15px;
+}
+
+.login-ip input,
+.signup-ip input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 13px;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  position: relative; /* Ensure input fields are above the pseudo-element */
+  z-index: 1; /* Bring inputs above the blurred background */
+}
+
+.login-ip input:focus,
+.signup-ip input:focus {
+  border-color: #3f51b5;
+}
+
+/* Error Message Styling */
+.login-error,
+.signup-error {
+  color: #ff0000;
+  font-size: 0.875em;
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* Submit Button Styling */
+.login-btn,
+.signup-btn {
+  width: 100%;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  position: relative; /* Ensure buttons are above the pseudo-element */
+  z-index: 1; /* Bring buttons above the blurred background */
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background-color: #303f9f;
+}
+
+/* Additional Links Styling */
+.login-forgot-password,
+.signup-newuser {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.signup-newuser {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.login-newuser a,
+.signup-newuser a,
+.login-forgot-password a {
+  color: #3f51b5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-newuser a:hover,
+.signup-newuser a:hover,
+.login-forgot-password a:hover {
+  color: #303f9f;
+}
+
+/* Optional Animation for Floating Effect */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.login-container,
+.signup-container {
+  animation: float 2s ease-in-out infinite; /* Apply the floating animation */
+}

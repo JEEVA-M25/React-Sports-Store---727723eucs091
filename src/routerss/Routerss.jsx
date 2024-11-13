@@ -8,6 +8,7 @@ import Login from '../pages/Login';
 import About from '../pages/About'; 
 import Checkout from '../pages/Checkout';
 import ProductDetails from '../pages/ProductDetails';
+import ForgotPassword from '../pages/ForgotPassword';
 
 const Routerss = () => {
   return (
@@ -21,6 +22,7 @@ const Routerss = () => {
       <Route path='/shop/:id' element={<ProductDetails />} />
       <Route path='/about' element={<About />} />
       <Route path='/checkout' element={<Checkout />} />
+      <Route path='/forgot' element={<ForgotPassword />} />
     </Routes>
   );
 };

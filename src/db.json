@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "user@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "1e81",
+      "name": "MURALISAN J",
+      "email": "jeeva.m1230@gmail.com",
+      "password": "Jipo001#1"
+    },
+    {
+      "id": "26d3",
+      "name": "aakash",
+      "email": "727723eucs133@skcet.ac.in",
+      "password": "Mu001#11"
+    },
+    {
+      "id": "defa",
+      "name": "vimal priya m",
+      "email": "727723euec059@skcet.ac.in",
+      "password": "Vimalpriya@21"
+    }
+  ]
+}

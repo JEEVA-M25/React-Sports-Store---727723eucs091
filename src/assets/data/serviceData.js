@@ -2,7 +2,7 @@ const serviceData = [
   {
     icon: "ri-truck-line",
     title: "Free Shipping",
-    subtitle: "Fastest delivery ever !!",
+    subtitle: "Fastest delivery ever !!   ",
     bg: "#fdefe6",
   },
   {

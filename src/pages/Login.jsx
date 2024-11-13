@@ -1,71 +1,84 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// Login.jsx
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../AuthService";
 import '../styles/Login.css';
-import { blue } from '@mui/material/colors';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+function Login() {
+    const [input, setInput] = useState({ email: '', password: '' });
+    const [error, setError] = useState({ email: '', password: '' });
+    const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+    function handleLogin() {
+        setError({ email: '', password: '' });
+        let hasError = false;
+        const newError = { email: '', password: '' };
 
-    if (!username || !email || !password) {
-      setError('All fields are required');
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      setError('Please enter a valid email address');
-    } else {
-      setError('');
-      alert('Login successful');
-      navigate('/home');
+        if (!input.email) {
+            newError.email = 'Email is required';
+            hasError = true;
+        }
+
+        if (!input.password) {
+            newError.password = 'Password is required';
+            hasError = true;
+        }
+
+        if (hasError) {
+            setError(newError);
+        } else {
+            login(input.email, input.password)
+                .then(() => navigate('/'))
+                .catch(() => setError({ email: '', password: 'Invalid email or password' }));
+        }
     }
-  };
 
-  return (
-    <div className="login-container">
-      <center>
-        <h2>Login</h2>
-        </center>
-      <form onSubmit={handleLogin}>
-        <div className="input-group">
-          <label>Username:</label>
-          <input 
-            type="text" 
-            placeholder="Enter your username"
-            value={username} 
-            onChange={(e) => setUsername(e.target.value)} 
-            required 
-          />
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setInput(prev => ({ ...prev, [name]: value }));
+    }
+
+    return (
+        <div className="login-container">
+            <h1 className="login-head">Login</h1>
+            <div className="login-input">
+                <div className="login-ip">
+                    <label>Email
+                        <input
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter your email..."
+                            value={input.email}
+                            name="email"
+                        />
+                    </label>
+                    {error.email && <p className="login-error">{error.email}</p>}
+                </div>
+                <div className="login-ip">
+                    <label>Password
+                        <input
+                            type="password"
+                            onChange={handleChange}
+                            placeholder="Enter your password..."
+                            value={input.password}
+                            name="password"
+                        />
+                    </label>
+                    {error.password && <p className="login-error">{error.password}</p>}
+                </div>
+            </div>
+            <button className="login-btn" onClick={handleLogin}>Login</button>
+            <div className="login-forgot-password">
+                <Link to="/forgot">Forgot Password?</Link>
+            </div>
+
+            <div className="login-newuser">
+                <br />
+                <p>New User?</p>
+                <Link className="login-link" to="/signup"> Create new account</Link>
+            </div>
         </div>
-        <div className="input-group">
-          <label>Email:</label>
-          <input 
-            type="email" 
-            placeholder="Enter your email"
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
-          />
-        </div>
-        <div className="input-group">
-          <label>Password:</label>
-          <input 
-            type="password" 
-            placeholder="Enter your password"
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            required 
-          />
-        </div>
-        {error && <p className="error-message">{error}</p>}
-        <button type="submit" className="login-btn">Login</button>
-      </form>
-      <p style={{color:'black'}}>Don't have an account? <Link to="/signup" style={{color:'black'}}>Signup here</Link></p>
-    </div>
-  );
-};
+    );
+}
 
 export default Login;
